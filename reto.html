@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="tituloPagina">Reto - TEAM CODER EXPERIENCE</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/reto.css">
+</head>
+<body class="pagina-reto">
+
+  <header class="encabezado-reto">
+    <div class="encabezado-reto__logo">
+      <img src="assets/img/Logo Movilis Outline.png" alt="Movilis" class="logo-movilis logo-movilis--claro">
+      <img src="assets/img/Logo Movilis Outline Amarillo.png" alt="Movilis" class="logo-movilis logo-movilis--oscuro">
+    </div>
+    <a href="index.html" class="boton-volver"><i class="fa-solid fa-arrow-left"></i><span>Volver</span></a>
+    <div class="encabezado-reto__info">
+      <span class="encabezado-reto__titulo" id="textoTituloEncabezado">Nivel 1, Reto X</span>
+      <div class="encabezado-reto__progreso">
+        <span id="textoProgresoEncabezado">Reto X de 5</span>
+        <div class="barra-progreso barra-progreso--reto"><div class="barra-progreso__relleno" id="barraProgresoEncabezado" style="width: 0%"></div></div>
+      </div>
+    </div>
+    <div class="encabezado-reto__espaciador"></div>
+  </header>
+
+  <main class="cuerpo-reto">
+    <!-- PEGÁ ACÁ, tal cual, sin editar (no tienen rutas de archivo adentro):
+         las líneas 44-171 de tu reto.html original — los 4 <section class="panel">
+         (panel-video, panel-editor, panel-preview, panel-ayuda, panel-validacion) -->
+  </main>
+
+  <div class="modal-certificado" id="modalCodigoAcceso">
+    <!-- PEGÁ ACÁ, tal cual: las líneas 218-232 de tu reto.html original
+         (el modal del código de acceso de MOVILIS) -->
+  </div>
+
+  <footer class="pie-reto">
+    <button class="boton-secundario" id="botonAnterior" disabled><i class="fa-solid fa-chevron-left"></i> Anterior</button>
+    <span id="textoFooterReto">Reto X de 5</span>
+    <button class="boton-estado" id="botonSiguiente" disabled>Siguiente <i class="fa-solid fa-chevron-right"></i></button>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closetag.min.js"></script>
+  <script src="js/preferencias.js"></script>
+  <script src="js/niveles-datos.js"></script>
+  <script src="js/retos-datos.js"></script>
+  <script src="js/progreso.js"></script>
+  <script src="js/medallas-datos.js"></script>
+  <script src="js/reto.js"></script>
+</body>
+</html>
