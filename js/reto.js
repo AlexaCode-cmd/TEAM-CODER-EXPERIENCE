@@ -353,11 +353,20 @@ function verificarTarjetaNivelSuperado() {
   mostrarTarjetaNivelSuperado(nivelEnCurso);
 }
 
+// Premio físico específico por nivel — se reclama en persona en el Instituto,
+// igual que el código de acceso.
+const REGALOS_POR_NIVEL = {
+  1: { icono: "fa-solid fa-pen", nombre: "un esfero" },
+  2: { icono: "fa-solid fa-book", nombre: "una libreta" },
+  3: { icono: "fa-solid fa-mug-hot", nombre: "una taza" },
+};
+
 function mostrarTarjetaNivelSuperado(nivel) {
-  document.getElementById("iconoNivelSuperado").className = nivel.icono;
-  document.getElementById("tituloNivelSuperado").textContent = `¡Nivel ${nivel.id} superado!`;
+  const regalo = REGALOS_POR_NIVEL[nivel.id];
+  document.getElementById("iconoNivelSuperado").className = regalo.icono;
+  document.getElementById("tituloNivelSuperado").textContent = `¡Ganaste ${regalo.nombre}!`;
   document.getElementById("textoNivelSuperado").textContent =
-    `Completaste "${nivel.nombre}": ${nivel.descripcion} Vas avanzando en tu recorrido por Desarrollo de Software.`;
+    `Completaste el Nivel ${nivel.id}: "${nivel.nombre}". Reclama tu premio en tu próxima visita al Instituto Tecnológico Superior MOVILIS.`;
 
   const modal = document.getElementById("modalNivelSuperado");
   const etapaCaja = document.getElementById("etapaCajaRegalo");
@@ -408,7 +417,6 @@ function lanzarConfetiRegalo() {
     setTimeout(() => pieza.remove(), 1100);
   }
 }
-
 
 // ===== CÓDIGO DE ACCESO (RF-017) =====
 // Código único para todos los jugadores, provisto por MOVILIS. No es un
