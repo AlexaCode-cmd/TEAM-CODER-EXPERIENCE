@@ -43,20 +43,20 @@
   line-height: 1.4;
 }
 
-#formularioBienvenida {
+.formulario-acceso {
   display: flex;
   flex-direction: column;
   text-align: left;
   gap: 6px;
 }
 
-#formularioBienvenida label {
+.formulario-acceso label {
   font-size: 13px;
   font-weight: 700;
   color: var(--texto);
 }
 
-#formularioBienvenida input {
+.formulario-acceso input {
   border: 2px solid var(--borde);
   border-radius: 10px;
   padding: 12px 14px;
@@ -68,7 +68,7 @@
   transition: border-color 0.2s ease;
 }
 
-#formularioBienvenida input:focus {
+.formulario-acceso input:focus {
   border-color: var(--morado-texto);
 }
 
@@ -108,6 +108,7 @@
   font-size: 14px;
   margin-top: 6px;
 }
+
 .selector-modo-acceso {
   display: flex;
   gap: 6px;

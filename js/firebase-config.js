@@ -21,7 +21,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyB3AxoSfJLL5svqnsg1CJoRe316ybGqMmA",
+    apiKey: "AIzaSyBXrT_3gRudwXEpDS-rJBJgI09N8GEoaDU",
     authDomain: "team-coder-experience.firebaseapp.com",
     projectId: "team-coder-experience",
     storageBucket: "team-coder-experience.firebasestorage.app",
