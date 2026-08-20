@@ -4,8 +4,6 @@
 // colapsable viven en menu.js (compartido con otras pantallas del shell).
 aplicarProgresoReal();
 
-document.getElementById("textoSaludoJugador").textContent = `¡Hola, ${nombreJugador}! Sigue el sendero y desbloquea cada nivel`;
-
 const iconoPorEstadoReto = {
   "completado": '<i class="fa-solid fa-circle-check fila-reto__icono--completado"></i>',
   "en-progreso": '<i class="fa-solid fa-spinner fila-reto__icono--en-progreso"></i>',
@@ -160,8 +158,8 @@ function construirContenidoPopover(nivel, progreso, desbloqueado) {
       <div class="popover-nivel__bloqueo">
         <i class="fa-solid fa-circle-info"></i>
         <span>${faltaCodigo
-        ? "Ya completaste lo necesario — solo falta tu código de acceso de MOVILIS."
-        : "Completa el 80% del nivel anterior para desbloquear este nivel."}</span>
+          ? "Ya completaste lo necesario — solo falta tu código de acceso de MOVILIS."
+          : "Completa el 80% del nivel anterior para desbloquear este nivel."}</span>
       </div>
       ${faltaCodigo ? `<a class="boton-estado" href="reto.html?nivel=3&reto=${niveles.find((n) => n.id === 3).retos.length}&mostrarCodigo=1">Ingresar código</a>` : ""}
     `;
@@ -262,4 +260,3 @@ window.addEventListener("sesionLista", () => {
   document.getElementById("textoSaludoJugador").textContent = `¡Hola, ${nombreJugador}! Sigue el sendero y desbloquea cada nivel`;
   renderizarSendero();
 });
-
