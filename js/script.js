@@ -258,4 +258,8 @@ window.addEventListener("resize", () => {
   temporizadorRedimension = setTimeout(renderizarSendero, 150);
 });
 
-renderizarSendero();
+window.addEventListener("sesionLista", () => {
+  document.getElementById("textoSaludoJugador").textContent = `¡Hola, ${nombreJugador}! Sigue el sendero y desbloquea cada nivel`;
+  renderizarSendero();
+});
+
