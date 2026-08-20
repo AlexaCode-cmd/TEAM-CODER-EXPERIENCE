@@ -22,46 +22,55 @@
     <h1>TEAM CODER EXPERIENCE</h1>
     <p class="subtitulo-bienvenida">Aprende HTML, CSS y JavaScript jugando, reto a reto.</p>
 
-    <form id="formularioBienvenida">
-      <label for="campoNombre">¿Cómo te llamas?</label>
-      <input type="text" id="campoNombre" placeholder="Escribe tu nombre" autocomplete="off" maxlength="40" required>
-      <p class="error-campo" id="errorNombre"></p>
+    <div class="selector-modo-acceso">
+      <button type="button" class="selector-modo-acceso__opcion selector-modo-acceso__opcion--activo"
+        id="botonModoLogin">Iniciar sesión</button>
+      <button type="button" class="selector-modo-acceso__opcion" id="botonModoRegistro">Crear cuenta</button>
+    </div>
+
+    <form id="formularioLogin">
+      <label for="campoCorreoLogin">Correo electrónico</label>
+      <input type="email" id="campoCorreoLogin" placeholder="tu@correo.com" autocomplete="email" required>
+
+      <label for="campoContrasenaLogin">Contraseña</label>
+      <input type="password" id="campoContrasenaLogin" placeholder="Tu contraseña" autocomplete="current-password"
+        required>
+
+      <p class="error-campo" id="errorLogin"></p>
+
+      <button type="submit" class="boton-estado boton-comenzar-aventura">
+        Iniciar sesión <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </form>
+
+    <form id="formularioRegistro" class="oculto">
+      <label for="campoNombreRegistro">¿Cómo te llamas?</label>
+      <input type="text" id="campoNombreRegistro" placeholder="Escribe tu nombre" autocomplete="name" maxlength="40"
+        required>
+
+      <label for="campoCorreoRegistro">Correo electrónico</label>
+      <input type="email" id="campoCorreoRegistro" placeholder="tu@correo.com" autocomplete="email" required>
+
+      <label for="campoContrasenaRegistro">Contraseña</label>
+      <input type="password" id="campoContrasenaRegistro" placeholder="Mínimo 6 caracteres" autocomplete="new-password"
+        minlength="6" required>
+
+      <p class="error-campo" id="errorRegistro"></p>
       <span class="ayuda-campo">
         <i class="fa-solid fa-circle-info"></i>
-        Lo usaremos para tu certificado al terminar el programa.
+        Usaremos tu nombre para tu certificado al terminar el programa.
       </span>
 
       <button type="submit" class="boton-estado boton-comenzar-aventura">
-        Comenzar la aventura <i class="fa-solid fa-arrow-right"></i>
+        Crear cuenta <i class="fa-solid fa-arrow-right"></i>
       </button>
     </form>
   </div>
-  <div class="contacto-flotante" id="contactoFlotante">
-    <div class="contacto-flotante__opciones">
-      <a class="contacto-flotante__opcion contacto-flotante__opcion--whatsapp"
-        href="https://wa.me/593991303169?text=Hola%2C%20tengo%20una%20consulta%20sobre%20TEAM%20CODER%20EXPERIENCE"
-        target="_blank" rel="noopener" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-      <a class="contacto-flotante__opcion contacto-flotante__opcion--instagram"
-        href="https://www.instagram.com/movilisecu/" target="_blank" rel="noopener" title="Instagram"><i
-          class="fa-brands fa-instagram"></i></a>
-      <a class="contacto-flotante__opcion contacto-flotante__opcion--facebook"
-        href="https://www.facebook.com/172671405931562" target="_blank" rel="noopener" title="Facebook"><i
-          class="fa-brands fa-facebook-f"></i></a>
-      <a class="contacto-flotante__opcion contacto-flotante__opcion--tiktok" href="https://www.tiktok.com/@movilisecu"
-        target="_blank" rel="noopener" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-    </div>
-    <button class="contacto-flotante__boton" id="botonContacto" aria-label="Contacto y redes sociales"
-      aria-expanded="false">
-      <span class="contacto-flotante__ping"></span>
-      <i class="fa-solid fa-comments" style="position: relative;"></i>
-    </button>
-  </div>
 
-  <script src="js/contacto.js"></script>
   <script type="module" src="js/firebase-config.js"></script>
   <script src="js/preferencias.js"></script>
   <script src="js/bienvenida.js"></script>
-
 </body>
+
 
 </html>
