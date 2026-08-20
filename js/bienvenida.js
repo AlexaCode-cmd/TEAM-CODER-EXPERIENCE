@@ -65,7 +65,7 @@ function iniciarBienvenida() {
         localStorage.setItem("dq_fecha_inscripcion", snapshot.data().fechaInscripcion);
       }
       localStorage.setItem("dq_id_jugador", credencial.user.uid);
-      // La redirección la maneja onAuthStateChanged de arriba.
+      window.location.href = "index.html";
     } catch (e) {
       error.textContent = mensajeDeError(e.code);
       error.classList.add("visible");
@@ -89,11 +89,11 @@ function iniciarBienvenida() {
     try {
       const credencial = await createUserWithEmailAndPassword(firebaseAuth, correo, contrasena);
       const fechaInscripcion = new Date().toISOString();
+      await setDoc(doc(firebaseDb, "usuarios", credencial.user.uid), { nombre, fechaInscripcion });
       localStorage.setItem("dq_nombre_jugador", nombre);
       localStorage.setItem("dq_fecha_inscripcion", fechaInscripcion);
       localStorage.setItem("dq_id_jugador", credencial.user.uid);
-      await setDoc(doc(firebaseDb, "usuarios", credencial.user.uid), { nombre, fechaInscripcion });
-      // La redirección la maneja onAuthStateChanged de arriba.
+      window.location.href = "index.html";
     } catch (e) {
       error.textContent = mensajeDeError(e.code);
       error.classList.add("visible");
