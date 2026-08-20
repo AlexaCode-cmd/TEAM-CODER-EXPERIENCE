@@ -13,7 +13,7 @@ function renderizarInfoPersonal() {
 
 const LONGITUD_MAXIMA_NOMBRE = 40;
 
-document.getElementById("botonEditarNombre").addEventListener("click", () => {
+document.getElementById("botonEditarNombre").addEventListener("click", async () => {
   const nuevoNombre = prompt("¿Cómo quieres que te llamemos?", nombreJugador);
   if (!nuevoNombre || !nuevoNombre.trim()) return;
 
@@ -23,6 +23,12 @@ document.getElementById("botonEditarNombre").addEventListener("click", () => {
     return;
   }
 
+  const usuario = window.firebaseAuth.currentUser;
+  await window.firebaseFns.setDoc(
+    window.firebaseFns.doc(window.firebaseDb, "usuarios", usuario.uid),
+    { nombre: nombreLimpio },
+    { merge: true }
+  );
   localStorage.setItem("dq_nombre_jugador", nombreLimpio);
   window.location.reload();
 });
@@ -181,12 +187,14 @@ function renderizarCertificado() {
   });
 }
 
-renderizarInfoPersonal();
-renderizarNivelYProgreso();
-renderizarEstadisticas();
-const historialRetos = recopilarHistorialRetos();
-renderizarGraficoSemanas(historialRetos);
-renderizarHistorial(historialRetos);
-renderizarGaleriaMedallas("todos");
-renderizarCertificadoNivel5();
-renderizarCertificado();
+window.addEventListener("sesionLista", () => {
+  renderizarInfoPersonal();
+  renderizarNivelYProgreso();
+  renderizarEstadisticas();
+  const historialRetos = recopilarHistorialRetos();
+  renderizarGraficoSemanas(historialRetos);
+  renderizarHistorial(historialRetos);
+  renderizarGaleriaMedallas("todos");
+  renderizarCertificadoNivel5();
+  renderizarCertificado();
+});
