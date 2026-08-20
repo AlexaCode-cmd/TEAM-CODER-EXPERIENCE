@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TEAM CODER EXPERIENCE - Mis Niveles</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body class="pagina-niveles">
 
   <button class="boton-hamburguesa" id="botonHamburguesa" aria-label="Abrir menú">
     <i class="fa-solid fa-bars"></i>
   </button>
+
+  <a href="ayuda.html" class="boton-ayuda-flotante" title="Ayuda">?</a>
+
 
   <div class="contenedor-app">
     <aside class="menu-lateral" id="menuLateral">
@@ -37,16 +44,19 @@
           <i class="fa-solid fa-gear enlace-menu__icono"></i>
           <span>Configuración</span>
         </a>
-        <a href="ayuda.html" class="enlace-menu" data-vista="ayuda">
+      </nav>
+
+      <div class="menu-lateral__pie">
+        <a href="ayuda.html" class="enlace-menu enlace-menu--secundario" data-vista="ayuda">
           <i class="fa-solid fa-circle-question enlace-menu__icono"></i>
           <span>Ayuda</span>
         </a>
-      </nav>
+        <a href="#" class="enlace-menu enlace-menu--salir" data-vista="salir">
+          <i class="fa-solid fa-right-from-bracket enlace-menu__icono"></i>
+          <span>Cerrar Sesión</span>
+        </a>
+      </div>
 
-      <a href="#" class="enlace-menu enlace-menu--salir" data-vista="salir">
-        <i class="fa-solid fa-right-from-bracket enlace-menu__icono"></i>
-        <span>Cerrar Sesión</span>
-      </a>
     </aside>
 
     <div class="fondo-menu" id="fondoMenu"></div>
@@ -85,4 +95,5 @@
   <script src="js/menu.js"></script>
   <script src="js/script.js"></script>
 </body>
+
 </html>

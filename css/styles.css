@@ -378,12 +378,23 @@ button {
   text-align: center;
 }
 
-.enlace-menu--salir {
+.menu-lateral__pie {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   border-top: 1px solid var(--borde);
   padding-top: 16px;
   margin-top: 8px;
+}
+
+.enlace-menu--secundario {
+  font-size: 13px;
+}
+
+.enlace-menu--salir {
   color: var(--peligro);
 }
+
 
 .enlace-menu--salir:hover {
   background: var(--peligro-hover-fondo);
@@ -626,8 +637,15 @@ button {
 }
 
 @keyframes pulso-actual {
-  0%, 100% { box-shadow: 0 6px 0 var(--morado-oscuro-texto), 0 0 0 0 rgba(136, 30, 128, 0.35); }
-  50% { box-shadow: 0 6px 0 var(--morado-oscuro-texto), 0 0 0 14px rgba(136, 30, 128, 0); }
+
+  0%,
+  100% {
+    box-shadow: 0 6px 0 var(--morado-oscuro-texto), 0 0 0 0 rgba(136, 30, 128, 0.35);
+  }
+
+  50% {
+    box-shadow: 0 6px 0 var(--morado-oscuro-texto), 0 0 0 14px rgba(136, 30, 128, 0);
+  }
 }
 
 .etiqueta-actual {
@@ -648,8 +666,15 @@ button {
 }
 
 @keyframes rebote-etiqueta {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-4px); }
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(-4px);
+  }
 }
 
 /* ===== POPOVER DE DETALLE DE NIVEL ===== */
@@ -820,9 +845,17 @@ button {
   gap: 8px;
 }
 
-.fila-reto__icono--completado { color: var(--verde-exito); }
-.fila-reto__icono--en-progreso { color: var(--morado-texto); }
-.fila-reto__icono--no-iniciado { color: var(--gris-bloqueado); }
+.fila-reto__icono--completado {
+  color: var(--verde-exito);
+}
+
+.fila-reto__icono--en-progreso {
+  color: var(--morado-texto);
+}
+
+.fila-reto__icono--no-iniciado {
+  color: var(--gris-bloqueado);
+}
 
 .fila-reto__estrellas {
   color: var(--amarillo-oscuro);
@@ -876,5 +909,39 @@ button {
   .encabezado-niveles {
     flex-direction: column;
     align-items: stretch;
+  }
+}
+
+.boton-ayuda-flotante {
+  position: fixed;
+  top: 24px;
+  right: 40px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  color: var(--texto-secundario);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  z-index: 300;
+}
+
+.boton-ayuda-flotante:hover {
+  color: var(--morado-texto);
+  border-color: var(--morado);
+  transform: scale(1.06);
+}
+
+@media (max-width: 1200px) {
+  .boton-ayuda-flotante {
+    top: 16px;
+    right: 16px;
   }
 }
