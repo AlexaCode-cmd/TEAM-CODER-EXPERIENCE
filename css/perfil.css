@@ -306,6 +306,7 @@ section.panel {
 /* En pantallas muy angostas ya no cabe el botón junto al texto ni
    encogiéndose: se apilan, con el botón a ancho completo. */
 @media (max-width: 480px) {
+
   #bloqueCertificado,
   #bloqueCertificadoNivel5 {
     flex-direction: column;

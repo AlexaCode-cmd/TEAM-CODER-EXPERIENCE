@@ -9,7 +9,7 @@ function contenidoEstilo(c) {
 }
 
 const datosNiveles = {
-    1: {
+  1: {
     nombre: "Introducción a HTML",
     retos: {
       1: {
@@ -234,8 +234,8 @@ const datosNiveles = {
       },
     },
   },
- 
-2: {
+
+  2: {
     nombre: "Estructuras HTML Avanzadas",
     retos: {
       1: {
@@ -478,7 +478,7 @@ const datosNiveles = {
 </html>`,
       },
     },
-},
+  },
   3: {
     nombre: "Fundamentos CSS",
     retos: {
@@ -743,7 +743,7 @@ p {
     },
   },
 
-    4: {
+  4: {
     nombre: "Layouts y Responsividad",
     retos: {
       1: {
@@ -1077,7 +1077,7 @@ p {
       },
     },
   },
-    5: {
+  5: {
     nombre: "JavaScript Básico",
     retos: {
       1: {
@@ -1253,7 +1253,7 @@ console.log([nombreFuncion]([valor1], [valor2]));`,
       },
     },
   },
-    6: {
+  6: {
     nombre: "DOM e Interactividad",
     retos: {
       1: {
@@ -1897,7 +1897,7 @@ console.log([nombre].[propiedad2]);`,
       },
     },
   },
-    9: {
+  9: {
     nombre: "Aplicaciones Web Dinámicas",
     retos: {
       1: {
@@ -2313,7 +2313,7 @@ guardar.addEventListener("click", function () {
     },
   },
 
-    10: {
+  10: {
     nombre: "Proyecto Integrador Final",
     retos: {
       1: {

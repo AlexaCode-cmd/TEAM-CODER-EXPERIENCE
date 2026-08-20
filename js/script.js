@@ -160,8 +160,8 @@ function construirContenidoPopover(nivel, progreso, desbloqueado) {
       <div class="popover-nivel__bloqueo">
         <i class="fa-solid fa-circle-info"></i>
         <span>${faltaCodigo
-          ? "Ya completaste lo necesario — solo falta tu código de acceso de MOVILIS."
-          : "Completa el 80% del nivel anterior para desbloquear este nivel."}</span>
+        ? "Ya completaste lo necesario — solo falta tu código de acceso de MOVILIS."
+        : "Completa el 80% del nivel anterior para desbloquear este nivel."}</span>
       </div>
       ${faltaCodigo ? `<a class="boton-estado" href="reto.html?nivel=3&reto=${niveles.find((n) => n.id === 3).retos.length}&mostrarCodigo=1">Ingresar código</a>` : ""}
     `;

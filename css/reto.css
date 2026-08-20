@@ -280,10 +280,21 @@
   border-bottom: 1px solid var(--borde);
 }
 
-.consola__linea--error { color: var(--error-texto); }
-.consola__linea--warn { color: var(--advertencia-texto); }
-.consola__linea--info { color: var(--morado-texto); }
-.consola__linea--log { color: var(--texto); }
+.consola__linea--error {
+  color: var(--error-texto);
+}
+
+.consola__linea--warn {
+  color: var(--advertencia-texto);
+}
+
+.consola__linea--info {
+  color: var(--morado-texto);
+}
+
+.consola__linea--log {
+  color: var(--texto);
+}
 
 .aviso-puntos {
   display: inline-block;

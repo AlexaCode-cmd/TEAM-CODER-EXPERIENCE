@@ -117,8 +117,8 @@ function renderizarGaleriaMedallas(filtro) {
         <div class="tarjeta-medalla__nombre">${medalla.nombre}</div>
         <div class="tarjeta-medalla__dificultad">${medalla.dificultad}</div>
         ${estaDesbloqueada
-          ? `<div class="tarjeta-medalla__fecha"><i class="fa-solid fa-calendar-check"></i> Desbloqueada el ${formatearFechaMedalla(fechaDesbloqueo)}</div>`
-          : `<div class="tarjeta-medalla__requisito">${medalla.descripcion}</div>`}
+        ? `<div class="tarjeta-medalla__fecha"><i class="fa-solid fa-calendar-check"></i> Desbloqueada el ${formatearFechaMedalla(fechaDesbloqueo)}</div>`
+        : `<div class="tarjeta-medalla__requisito">${medalla.descripcion}</div>`}
       </div>
     `;
   }).join("");

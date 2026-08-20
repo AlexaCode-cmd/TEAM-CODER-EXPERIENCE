@@ -115,10 +115,10 @@
   transition: transform 0.2s ease;
 }
 
-.interruptor input:checked + .interruptor__deslizador {
+.interruptor input:checked+.interruptor__deslizador {
   background: var(--morado);
 }
 
-.interruptor input:checked + .interruptor__deslizador::before {
+.interruptor input:checked+.interruptor__deslizador::before {
   transform: translateX(20px);
 }

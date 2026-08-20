@@ -51,51 +51,81 @@ function nivelCompletadoSinPistas(idNivel) {
 }
 
 const CATALOGO_MEDALLAS = [
-  { id: "principiante", nombre: "Principiante", icono: "fa-solid fa-shoe-prints", dificultad: "Fácil",
+  {
+    id: "principiante", nombre: "Principiante", icono: "fa-solid fa-shoe-prints", dificultad: "Fácil",
     descripcion: "Completa el Nivel 1",
-    cumplida: () => calcularProgresoNivel(niveles.find((n) => n.id === 1)).estadoGeneral === "completado" },
-  { id: "primer-paso", nombre: "Primer Paso", icono: "fa-solid fa-flag", dificultad: "Fácil",
+    cumplida: () => calcularProgresoNivel(niveles.find((n) => n.id === 1)).estadoGeneral === "completado"
+  },
+  {
+    id: "primer-paso", nombre: "Primer Paso", icono: "fa-solid fa-flag", dificultad: "Fácil",
     descripcion: "Completa tu primer reto",
-    cumplida: () => totalRetosCompletados() >= 1 },
-  { id: "persistente", nombre: "Persistente", icono: "fa-solid fa-fire", dificultad: "Fácil",
+    cumplida: () => totalRetosCompletados() >= 1
+  },
+  {
+    id: "persistente", nombre: "Persistente", icono: "fa-solid fa-fire", dificultad: "Fácil",
     descripcion: "Intenta 10 veces un mismo reto",
-    cumplida: () => algunRetoConIntentos(10) },
-  { id: "constructor-html", nombre: "Constructor de HTML", icono: "fa-solid fa-hammer", dificultad: "Media",
+    cumplida: () => algunRetoConIntentos(10)
+  },
+  {
+    id: "constructor-html", nombre: "Constructor de HTML", icono: "fa-solid fa-hammer", dificultad: "Media",
     descripcion: "Obtén 3 estrellas en todos los retos del Nivel 1",
-    cumplida: () => todosLosRetosConEstrellas(1, 3) },
-  { id: "artista-css", nombre: "Artista CSS", icono: "fa-solid fa-palette", dificultad: "Media",
+    cumplida: () => todosLosRetosConEstrellas(1, 3)
+  },
+  {
+    id: "artista-css", nombre: "Artista CSS", icono: "fa-solid fa-palette", dificultad: "Media",
     descripcion: "Completa todos los retos del Nivel 3",
-    cumplida: () => calcularProgresoNivel(niveles.find((n) => n.id === 3)).estadoGeneral === "completado" },
-  { id: "mago-javascript", nombre: "Mago JavaScript", icono: "fa-solid fa-wand-magic-sparkles", dificultad: "Media",
+    cumplida: () => calcularProgresoNivel(niveles.find((n) => n.id === 3)).estadoGeneral === "completado"
+  },
+  {
+    id: "mago-javascript", nombre: "Mago JavaScript", icono: "fa-solid fa-wand-magic-sparkles", dificultad: "Media",
     descripcion: "Completa todos los retos del Nivel 5",
-    cumplida: () => calcularProgresoNivel(niveles.find((n) => n.id === 5)).estadoGeneral === "completado" },
-  { id: "independiente", nombre: "Independiente", icono: "fa-solid fa-brain", dificultad: "Media-Alta",
+    cumplida: () => calcularProgresoNivel(niveles.find((n) => n.id === 5)).estadoGeneral === "completado"
+  },
+  {
+    id: "independiente", nombre: "Independiente", icono: "fa-solid fa-brain", dificultad: "Media-Alta",
     descripcion: "Completa el Nivel 5 sin usar pistas",
-    cumplida: () => nivelCompletadoSinPistas(5) },
-  { id: "velocidad", nombre: "Velocidad", icono: "fa-solid fa-bolt", dificultad: "Difícil",
+    cumplida: () => nivelCompletadoSinPistas(5)
+  },
+  {
+    id: "velocidad", nombre: "Velocidad", icono: "fa-solid fa-bolt", dificultad: "Difícil",
     descripcion: "Completa 3 retos en menos de 2 minutos cada uno",
-    cumplida: () => contarRetosRapidos() >= 3 },
-  { id: "perfeccionista", nombre: "Perfeccionista", icono: "fa-solid fa-gem", dificultad: "Difícil",
+    cumplida: () => contarRetosRapidos() >= 3
+  },
+  {
+    id: "perfeccionista", nombre: "Perfeccionista", icono: "fa-solid fa-gem", dificultad: "Difícil",
     descripcion: "Obtén 100 puntos (3 estrellas) en un reto",
-    cumplida: () => algunRetoConEstrellas(3) },
-  { id: "disenador-web", nombre: "Diseñador Web", icono: "fa-solid fa-swatchbook", dificultad: "Alta",
+    cumplida: () => algunRetoConEstrellas(3)
+  },
+  {
+    id: "disenador-web", nombre: "Diseñador Web", icono: "fa-solid fa-swatchbook", dificultad: "Alta",
     descripcion: "Obtén 3 estrellas en todos los retos del Nivel 4",
-    cumplida: () => todosLosRetosConEstrellas(4, 3) },
-  { id: "programador-js", nombre: "Programador JS", icono: "fa-solid fa-laptop-code", dificultad: "Alta",
+    cumplida: () => todosLosRetosConEstrellas(4, 3)
+  },
+  {
+    id: "programador-js", nombre: "Programador JS", icono: "fa-solid fa-laptop-code", dificultad: "Alta",
     descripcion: "Obtén 3 estrellas en todos los retos de los Niveles 5, 6 y 7",
-    cumplida: () => [5, 6, 7].every((id) => todosLosRetosConEstrellas(id, 3)) },
-  { id: "desarrollador", nombre: "Desarrollador", icono: "fa-solid fa-server", dificultad: "Alta",
+    cumplida: () => [5, 6, 7].every((id) => todosLosRetosConEstrellas(id, 3))
+  },
+  {
+    id: "desarrollador", nombre: "Desarrollador", icono: "fa-solid fa-server", dificultad: "Alta",
     descripcion: "Completa 7 de los 10 niveles",
-    cumplida: () => contarNivelesCompletados() >= 7 },
-  { id: "experto-web", nombre: "Experto Web", icono: "fa-solid fa-globe", dificultad: "Alta",
+    cumplida: () => contarNivelesCompletados() >= 7
+  },
+  {
+    id: "experto-web", nombre: "Experto Web", icono: "fa-solid fa-globe", dificultad: "Alta",
     descripcion: "Completa 9 de los 10 niveles",
-    cumplida: () => contarNivelesCompletados() >= 9 },
-  { id: "full-stack-junior", nombre: "Full Stack Junior", icono: "fa-solid fa-graduation-cap", dificultad: "Muy alta",
+    cumplida: () => contarNivelesCompletados() >= 9
+  },
+  {
+    id: "full-stack-junior", nombre: "Full Stack Junior", icono: "fa-solid fa-graduation-cap", dificultad: "Muy alta",
     descripcion: "Completa los 10 niveles",
-    cumplida: () => contarNivelesCompletados() >= 10 },
-  { id: "certificado", nombre: "Certificado", icono: "fa-solid fa-award", dificultad: "Muy alta",
+    cumplida: () => contarNivelesCompletados() >= 10
+  },
+  {
+    id: "certificado", nombre: "Certificado", icono: "fa-solid fa-award", dificultad: "Muy alta",
     descripcion: "Descarga tu certificado de finalización",
-    cumplida: () => localStorage.getItem("dq_certificado_descargado") === "true" },
+    cumplida: () => localStorage.getItem("dq_certificado_descargado") === "true"
+  },
 ];
 
 function obtenerMedallasDesbloqueadas() {
