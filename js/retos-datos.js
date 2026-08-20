@@ -742,3 +742,338 @@ p {
       },
     },
   },
+
+    4: {
+    nombre: "Layouts y Responsividad",
+    retos: {
+      1: {
+        id: 1,
+        nombre: "Display Flex",
+        objetivo: "Usar display: flex para alinear varios elementos en una fila.",
+        conceptoClave: '<code>display: flex</code> convierte a un contenedor en flexible: sus hijos se acomodan en fila automáticamente. <code>justify-content</code> alinea horizontalmente y <code>align-items</code> alinea verticalmente.',
+        masInformacion: "Flexbox es ideal para alinear elementos en una sola dirección (fila o columna). Por defecto, los hijos de un contenedor flex se acomodan en fila, de izquierda a derecha.",
+        duracionVideo: "3:15",
+        plantilla: `<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flexbox</title>
+    <style>
+      /* Escribe aquí tus reglas CSS */
+
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+  </body>
+</html>`,
+        criterios: [
+          { descripcion: "Existe un &lt;style&gt; con contenido", cumple: (c) => contenidoEstilo(c).trim().length > 0 },
+          { descripcion: "Usas display: flex", cumple: (c) => /display\s*:\s*flex/i.test(contenidoEstilo(c)) },
+          { descripcion: "Usas la propiedad justify-content", cumple: (c) => /justify-content\s*:/i.test(contenidoEstilo(c)) },
+          { descripcion: "Usas la propiedad align-items", cumple: (c) => /align-items\s*:/i.test(contenidoEstilo(c)) },
+        ],
+        pistaGeneral: "display: flex; convierte a .contenedor en un contenedor flexible. justify-content alinea horizontalmente (por ejemplo center o space-between) y align-items alinea verticalmente (por ejemplo center).",
+        pistaCodigo: `.contenedor {
+  display: flex;
+  justify-content: [tu valor];
+  align-items: [tu valor];
+}`,
+        solucion: `<!DOCTYPE html>
+<html>
+  <head>
+    <title>Flexbox</title>
+    <style>
+      .contenedor {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 150px;
+        background-color: lightgray;
+      }
+      .item {
+        background-color: purple;
+        color: white;
+        padding: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+  </body>
+</html>`,
+      },
+
+      2: {
+        id: 2,
+        nombre: "CSS Grid",
+        objetivo: "Usar display: grid para organizar elementos en filas y columnas.",
+        conceptoClave: '<code>display: grid</code> convierte a un contenedor en una cuadrícula. <code>grid-template-columns</code> define cuántas columnas tiene y de qué tamaño, y <code>gap</code> separa las celdas entre sí.',
+        masInformacion: "Mientras flexbox piensa en una sola fila o columna, grid piensa en filas y columnas a la vez, como una tabla.",
+        duracionVideo: "3:15",
+        plantilla: `<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Grid</title>
+    <style>
+      /* Escribe aquí tus reglas CSS */
+
+    </style>
+  </head>
+  <body>
+    <div class="cuadricula">
+      <div class="celda">1</div>
+      <div class="celda">2</div>
+      <div class="celda">3</div>
+      <div class="celda">4</div>
+    </div>
+  </body>
+</html>`,
+        criterios: [
+          { descripcion: "Existe un &lt;style&gt; con contenido", cumple: (c) => contenidoEstilo(c).trim().length > 0 },
+          { descripcion: "Usas display: grid", cumple: (c) => /display\s*:\s*grid/i.test(contenidoEstilo(c)) },
+          { descripcion: "Usas la propiedad grid-template-columns", cumple: (c) => /grid-template-columns\s*:/i.test(contenidoEstilo(c)) },
+          { descripcion: "Usas la propiedad gap", cumple: (c) => /\bgap\s*:/i.test(contenidoEstilo(c)) },
+        ],
+        pistaGeneral: "display: grid; convierte a .cuadricula en una cuadrícula. grid-template-columns: repeat(2, 1fr); crea 2 columnas iguales. gap: [valor]px; separa las celdas.",
+        pistaCodigo: `.cuadricula {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: [tu valor]px;
+}`,
+        solucion: `<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Grid</title>
+    <style>
+      .cuadricula {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .celda {
+        background-color: lightblue;
+        padding: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cuadricula">
+      <div class="celda">1</div>
+      <div class="celda">2</div>
+      <div class="celda">3</div>
+      <div class="celda">4</div>
+    </div>
+  </body>
+</html>`,
+      },
+
+      3: {
+        id: 3,
+        nombre: "Posicionamiento",
+        objetivo: "Usar position: relative y position: absolute para ubicar un elemento dentro de otro.",
+        conceptoClave: '<code>position: relative</code> deja a un elemento en su lugar normal, pero lo convierte en referencia. <code>position: absolute</code> saca a un elemento del flujo normal y lo ubica respecto a ese padre, usando <code>top</code>, <code>left</code>, <code>right</code> o <code>bottom</code>.',
+        masInformacion: "Si un elemento con position: absolute no tiene ningún padre con position: relative (o absolute/fixed), se posiciona respecto a toda la página.",
+        duracionVideo: "3:00",
+        plantilla: `<!DOCTYPE html>
+<html>
+  <head>
+    <title>Posicionamiento</title>
+    <style>
+      /* Escribe aquí tus reglas CSS */
+
+    </style>
+  </head>
+  <body>
+    <div class="tarjeta">
+      <span class="etiqueta">Nuevo</span>
+      <p>Contenido de la tarjeta</p>
+    </div>
+  </body>
+</html>`,
+        criterios: [
+          { descripcion: "Existe un &lt;style&gt; con contenido", cumple: (c) => contenidoEstilo(c).trim().length > 0 },
+          { descripcion: "Usas position: relative", cumple: (c) => /position\s*:\s*relative/i.test(contenidoEstilo(c)) },
+          { descripcion: "Usas position: absolute", cumple: (c) => /position\s*:\s*absolute/i.test(contenidoEstilo(c)) },
+          { descripcion: "Ubicas el elemento absoluto con top, left, right o bottom", cumple: (c) => /\b(top|left|right|bottom)\s*:/i.test(contenidoEstilo(c)) },
+        ],
+        pistaGeneral: ".tarjeta necesita position: relative; para servir de referencia. .etiqueta necesita position: absolute; junto con top y/o right (por ejemplo top: 0; right: 0;) para ubicarse en una esquina.",
+        pistaCodigo: `.tarjeta {
+  position: relative;
+}
+.etiqueta {
+  position: absolute;
+  top: [tu valor]px;
+  right: [tu valor]px;
+}`,
+        solucion: `<!DOCTYPE html>
+<html>
+  <head>
+    <title>Posicionamiento</title>
+    <style>
+      .tarjeta {
+        position: relative;
+        background-color: lightyellow;
+        padding: 20px;
+        width: 200px;
+      }
+      .etiqueta {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background-color: red;
+        color: white;
+        padding: 4px 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tarjeta">
+      <span class="etiqueta">Nuevo</span>
+      <p>Contenido de la tarjeta</p>
+    </div>
+  </body>
+</html>`,
+      },
+
+      4: {
+        id: 4,
+        nombre: "Media Queries",
+        objetivo: "Usar @media para cambiar un estilo según el ancho de la pantalla.",
+        conceptoClave: '<code>@media (max-width: 600px) { ... }</code> aplica las reglas de adentro solo cuando la pantalla mide 600px o menos. Es la base del diseño responsivo.',
+        masInformacion: "Puedes probarlo achicando la ventana del navegador (o la del live preview) hasta que se cumpla la condición.",
+        duracionVideo: "3:00",
+        plantilla: `<!DOCTYPE html>
+<html>
+  <head>
+    <title>Media Queries</title>
+    <style>
+      .caja {
+        background-color: lightblue;
+        padding: 20px;
+      }
+
+      /* Escribe aquí una media query que cambie algo de .caja en pantallas angostas */
+
+    </style>
+  </head>
+  <body>
+    <div class="caja">Achica la ventana para ver el cambio</div>
+  </body>
+</html>`,
+        criterios: [
+          { descripcion: "Existe un &lt;style&gt; con contenido", cumple: (c) => contenidoEstilo(c).trim().length > 0 },
+          { descripcion: "Usas @media", cumple: (c) => /@media/i.test(contenidoEstilo(c)) },
+          { descripcion: "La media query usa max-width o min-width", cumple: (c) => /@media\s*\([^)]*\b(max-width|min-width)\b/i.test(contenidoEstilo(c)) },
+          { descripcion: "Dentro de la media query cambias al menos una propiedad", cumple: (c) => /@media[^{]*\{\s*[^{}]+\{[^{}]*:[^{}]*\}\s*\}/i.test(contenidoEstilo(c)) },
+        ],
+        pistaGeneral: "@media (max-width: 600px) { .caja { background-color: orange; } } cambia el fondo de .caja solo cuando la pantalla mide 600px o menos.",
+        pistaCodigo: `@media (max-width: 600px) {
+  .caja {
+    background-color: [tu color];
+  }
+}`,
+        solucion: `<!DOCTYPE html>
+<html>
+  <head>
+    <title>Media Queries</title>
+    <style>
+      .caja {
+        background-color: lightblue;
+        padding: 20px;
+      }
+
+      @media (max-width: 600px) {
+        .caja {
+          background-color: orange;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="caja">Achica la ventana para ver el cambio</div>
+  </body>
+</html>`,
+      },
+
+      5: {
+        id: 5,
+        nombre: "Diseño Responsivo",
+        objetivo: "Combinar flexbox (o grid) con una media query para crear un layout que se adapta a pantallas angostas.",
+        conceptoClave: "Un diseño responsivo combina flexbox o grid para el layout normal, con una media query que lo reorganiza en pantallas angostas (por ejemplo, cambiando flex-direction o grid-template-columns).",
+        masInformacion: "Este reto es un repaso: usa lo que ya practicaste en los retos anteriores de este nivel.",
+        duracionVideo: "3:15",
+        plantilla: `<!DOCTYPE html>
+<html>
+  <head>
+    <title>Diseño Responsivo</title>
+    <style>
+      /* Crea un contenedor flex (o grid) y una media query que lo reorganice en pantallas angostas */
+
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+  </body>
+</html>`,
+        criterios: [
+          { descripcion: "Existe un &lt;style&gt; con contenido", cumple: (c) => contenidoEstilo(c).trim().length > 0 },
+          { descripcion: "Usas display: flex o display: grid", cumple: (c) => /display\s*:\s*(flex|grid)/i.test(contenidoEstilo(c)) },
+          { descripcion: "Usas @media con max-width o min-width", cumple: (c) => /@media\s*\([^)]*\b(max-width|min-width)\b/i.test(contenidoEstilo(c)) },
+          { descripcion: "Dentro de la media query cambias flex-direction o grid-template-columns", cumple: (c) => /@media[^{]*\{\s*[^{}]+\{[^{}]*(flex-direction|grid-template-columns)\s*:[^{}]*\}\s*\}/i.test(contenidoEstilo(c)) },
+        ],
+        pistaGeneral: "Usa display: flex (o grid) para el layout normal, y dentro de @media (max-width: ...) cambia flex-direction a column (o grid-template-columns a una sola columna) para pantallas angostas.",
+        pistaCodigo: `.contenedor {
+  display: flex;
+}
+@media (max-width: 600px) {
+  .contenedor {
+    flex-direction: column;
+  }
+}`,
+        solucion: `<!DOCTYPE html>
+<html>
+  <head>
+    <title>Diseño Responsivo</title>
+    <style>
+      .contenedor {
+        display: flex;
+        gap: 12px;
+      }
+      .item {
+        background-color: purple;
+        color: white;
+        padding: 16px;
+        flex: 1;
+      }
+
+      @media (max-width: 600px) {
+        .contenedor {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+  </body>
+</html>`,
+      },
+    },
+  },
