@@ -209,15 +209,28 @@
       <button class="modal-certificado__cerrar" id="botonCerrarModalNivelSuperado" aria-label="Cerrar">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <div class="modal-certificado__insignia"><i id="iconoNivelSuperado" class="fa-solid fa-trophy"></i></div>
-      <h2 id="tituloNivelSuperado">¡Nivel superado!</h2>
-      <p id="textoNivelSuperado"></p>
-      <div class="modal-certificado__acciones">
-        <button class="boton-secundario" id="botonContinuarNivelSuperado">Continuar jugando <i
-            class="fa-solid fa-arrow-right"></i></button>
+
+      <div class="etapa-caja-regalo" id="etapaCajaRegalo">
+        <div class="caja-regalo" id="cajaRegalo">
+          <div class="caja-regalo__moño"></div>
+          <div class="caja-regalo__tapa"></div>
+          <div class="caja-regalo__cuerpo"></div>
+        </div>
+        <span class="caja-regalo__aviso">👆 Tocá la caja para abrirla</span>
+      </div>
+
+      <div class="contenido-nivel-superado" id="contenidoNivelSuperado">
+        <div class="modal-certificado__insignia"><i id="iconoNivelSuperado" class="fa-solid fa-trophy"></i></div>
+        <h2 id="tituloNivelSuperado">¡Nivel superado!</h2>
+        <p id="textoNivelSuperado"></p>
+        <div class="modal-certificado__acciones">
+          <button class="boton-secundario" id="botonContinuarNivelSuperado">Continuar jugando <i
+              class="fa-solid fa-arrow-right"></i></button>
+        </div>
       </div>
     </div>
   </div>
+
 
   <div class="modal-certificado" id="modalCodigoAcceso">
     <div class="modal-certificado__tarjeta">
@@ -237,6 +250,20 @@
       </form>
     </div>
   </div>
+  <div class="modal-certificado" id="modalDescuentoEspecial">
+    <div class="modal-certificado__tarjeta">
+      <button class="modal-certificado__cerrar" id="botonCerrarModalDescuento" aria-label="Cerrar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-certificado__insignia"><i class="fa-solid fa-percent"></i></div>
+      <h2>¡Has aplicado a un descuento especial!</h2>
+      <div class="modal-certificado__acciones">
+        <button class="boton-estado" id="botonContinuarDescuento">Continuar <i
+            class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+
 
   <div class="mascota-flotante" id="mascotaFlotante">
     <div class="mascota-flotante__burbuja" id="mascotaBurbuja"></div>

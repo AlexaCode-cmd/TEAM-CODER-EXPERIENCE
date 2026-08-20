@@ -360,7 +360,23 @@ function mostrarTarjetaNivelSuperado(nivel) {
     `Completaste "${nivel.nombre}": ${nivel.descripcion} Vas avanzando en tu recorrido por Desarrollo de Software.`;
 
   const modal = document.getElementById("modalNivelSuperado");
+  const etapaCaja = document.getElementById("etapaCajaRegalo");
+  const contenido = document.getElementById("contenidoNivelSuperado");
+  const cajaRegalo = document.getElementById("cajaRegalo");
+
+  etapaCaja.classList.remove("oculta");
+  contenido.classList.remove("visible");
+  cajaRegalo.classList.remove("abriendo");
   modal.classList.add("visible");
+
+  cajaRegalo.addEventListener("click", function abrirCajaRegalo() {
+    cajaRegalo.classList.add("abriendo");
+    lanzarConfetiRegalo();
+    setTimeout(() => {
+      etapaCaja.classList.add("oculta");
+      contenido.classList.add("visible");
+    }, 420);
+  }, { once: true });
 
   // El Nivel 3 es el hito antes del código de acceso: al cerrar su tarjeta,
   // encadena directo al modal del código en vez de solo cerrar.
@@ -371,6 +387,28 @@ function mostrarTarjetaNivelSuperado(nivel) {
   document.getElementById("botonContinuarNivelSuperado").addEventListener("click", cerrarModal, { once: true });
   document.getElementById("botonCerrarModalNivelSuperado").addEventListener("click", cerrarModal, { once: true });
 }
+
+// Confeti de la caja de regalo: piezas de colores que se generan al abrir la
+// caja y se autoeliminan del DOM después de la animación.
+function lanzarConfetiRegalo() {
+  const contenedor = document.querySelector("#modalNivelSuperado .modal-certificado__tarjeta");
+  const colores = ["#46368d", "#f9eb1d", "#2f9e6b", "#e6d610", "#8a7bc4"];
+
+  for (let i = 0; i < 26; i++) {
+    const pieza = document.createElement("div");
+    pieza.className = "confeti-pieza";
+    const angulo = Math.random() * Math.PI * 2;
+    const distancia = 90 + Math.random() * 90;
+    pieza.style.setProperty("--dx", `${Math.cos(angulo) * distancia}px`);
+    pieza.style.setProperty("--dy", `${Math.sin(angulo) * distancia - 40}px`);
+    pieza.style.setProperty("--rot", `${Math.random() * 720 - 360}deg`);
+    pieza.style.background = colores[i % colores.length];
+    pieza.style.animationDelay = `${Math.random() * 0.08}s`;
+    contenedor.appendChild(pieza);
+    setTimeout(() => pieza.remove(), 1100);
+  }
+}
+
 
 // ===== CÓDIGO DE ACCESO (RF-017) =====
 // Código único para todos los jugadores, provisto por MOVILIS. No es un
@@ -402,8 +440,9 @@ function mostrarModalCodigoAcceso() {
     localStorage.setItem("dq_codigo_validado", "true");
     document.getElementById("formularioCodigoAcceso").removeEventListener("submit", manejarEnvio);
     modal.classList.remove("visible");
-    window.location.href = "index.html";
+    mostrarModalDescuentoEspecial();
   });
+
 
   document.getElementById("botonCerrarModalCodigoAcceso").addEventListener("click", () => {
     modal.classList.remove("visible");
@@ -416,6 +455,21 @@ function mostrarModalCodigoAcceso() {
 if (parametrosUrl.get("mostrarCodigo") === "1") {
   document.addEventListener("DOMContentLoaded", () => mostrarModalCodigoAcceso());
 }
+
+// Se muestra una sola vez, justo al validar el código de acceso correctamente
+// (RF-017); al cerrarla continúa el flujo normal hacia el mapa de niveles.
+function mostrarModalDescuentoEspecial() {
+  const modal = document.getElementById("modalDescuentoEspecial");
+  modal.classList.add("visible");
+
+  const continuar = () => {
+    modal.classList.remove("visible");
+    window.location.href = "index.html";
+  };
+  document.getElementById("botonContinuarDescuento").addEventListener("click", continuar, { once: true });
+  document.getElementById("botonCerrarModalDescuento").addEventListener("click", continuar, { once: true });
+}
+
 
 function verificarCertificadoNivel5() {
   if (numeroNivel !== 5 || !esUltimoReto) return;
