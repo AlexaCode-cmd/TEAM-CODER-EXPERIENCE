@@ -1077,3 +1077,180 @@ p {
       },
     },
   },
+    5: {
+    nombre: "JavaScript Básico",
+    retos: {
+      1: {
+        id: 1,
+        nombre: "Variables y Tipos",
+        objetivo: "Declarar variables con let y const, usando distintos tipos de datos, y mostrarlas con console.log.",
+        conceptoClave: '<code>let</code> declara una variable que puede cambiar de valor; <code>const</code> declara una que no cambia. Los tipos básicos son string (texto), number (número) y boolean (verdadero/falso).',
+        masInformacion: "console.log() muestra el valor de una variable en la consola — es la herramienta más usada para revisar qué está pasando en tu código.",
+        duracionVideo: "2:45",
+        plantilla: `<script>
+  // Declara una variable de texto (string) con let
+
+  // Declara una variable numérica (number) con let
+
+  // Declara una variable booleana (boolean) con const
+
+  // Usa console.log() para mostrar cada una
+</script>`,
+        criterios: [
+          { descripcion: "Declaras una variable con let", cumple: (c) => /\blet\s+\w+\s*=/.test(c) },
+          { descripcion: "Declaras una variable con const", cumple: (c) => /\bconst\s+\w+\s*=/.test(c) },
+          { descripcion: "Tienes una variable de texto (string) entre comillas", cumple: (c) => /(let|const)\s+\w+\s*=\s*["'][^"']*["']/.test(c) },
+          { descripcion: "Tienes una variable numérica (number)", cumple: (c) => /(let|const)\s+\w+\s*=\s*\d+(\.\d+)?\s*;/.test(c) },
+          { descripcion: "Usas console.log() al menos una vez", cumple: (c) => /console\.log\s*\(/.test(c) },
+        ],
+        pistaGeneral: 'let miTexto = "texto"; declara una variable de texto. let miNumero = 5; declara un número. const miBooleano = true; declara un booleano que no cambia. console.log(variable); muestra su valor.',
+        pistaCodigo: `let miTexto = "[tu texto]";
+let miNumero = [tu número];
+const miBooleano = true;
+
+console.log(miTexto);
+console.log(miNumero);
+console.log(miBooleano);`,
+        solucion: `<script>
+  let nombre = "Ana";
+  let edad = 16;
+  const esEstudiante = true;
+
+  console.log(nombre);
+  console.log(edad);
+  console.log(esEstudiante);
+</script>`,
+      },
+
+      2: {
+        id: 2,
+        nombre: "Operadores",
+        objetivo: "Usar operadores aritméticos y de comparación, y mostrar el resultado con console.log.",
+        conceptoClave: 'Los operadores aritméticos (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>) hacen cálculos. Los operadores de comparación (<code>&gt;</code>, <code>&lt;</code>, <code>===</code>) comparan valores y devuelven true o false.',
+        masInformacion: "=== compara tanto el valor como el tipo de dato; es más seguro que == para evitar resultados inesperados.",
+        duracionVideo: "3:00",
+        plantilla: `<script>
+  // Usa un operador aritmético (+, -, *, /) entre dos números y guarda el resultado en una variable
+
+  // Usa un operador de comparación (>, <, ===, etc.) entre dos valores y guarda el resultado en otra variable
+
+  // Muestra ambos resultados con console.log()
+</script>`,
+        criterios: [
+          { descripcion: "Usas un operador aritmético (+, -, *, /) entre números", cumple: (c) => /\d\s*[\+\-\*\/]\s*\d/.test(c) },
+          { descripcion: "Guardas el resultado en una variable", cumple: (c) => /(let|const)\s+\w+\s*=\s*\d+\s*[\+\-\*\/]\s*\d+/.test(c) },
+          { descripcion: "Usas un operador de comparación (>, <, ===, !==, etc.)", cumple: (c) => /(===|!==|==|!=|>=|<=|[<>])/.test(c) },
+          { descripcion: "Usas console.log() al menos dos veces", cumple: (c) => (c.match(/console\.log\s*\(/g) || []).length >= 2 },
+        ],
+        pistaGeneral: "let suma = 5 + 3; guarda el resultado de una suma. let esMayor = 10 > 7; guarda el resultado de una comparación (true o false). Muestra ambas con console.log().",
+        pistaCodigo: `let resultado = [num1] + [num2];
+let comparacion = [num1] > [num2];
+
+console.log(resultado);
+console.log(comparacion);`,
+        solucion: `<script>
+  let suma = 5 + 3;
+  let esMayor = 10 > 7;
+
+  console.log(suma);
+  console.log(esMayor);
+</script>`,
+      },
+
+      3: {
+        id: 3,
+        nombre: "Condicionales",
+        objetivo: "Usar if / else para tomar decisiones según una condición.",
+        conceptoClave: '<code>if (condición) { ... } else { ... }</code> ejecuta un bloque de código u otro según si la condición es verdadera o falsa.',
+        masInformacion: "Puedes encadenar varias condiciones con else if para revisar más de un caso.",
+        duracionVideo: "3:00",
+        plantilla: `<script>
+  let edad = 16;
+
+  // Escribe un if/else que muestre un mensaje distinto según el valor de edad
+</script>`,
+        criterios: [
+          { descripcion: "Existe un if", cumple: (c) => /\bif\s*\(/.test(c) },
+          { descripcion: "Existe un else", cumple: (c) => /\belse\b/.test(c) },
+          { descripcion: "La condición del if usa un operador de comparación", cumple: (c) => /if\s*\([^)]*(==|<|>|&&|\|\|)[^)]*\)/.test(c) },
+          { descripcion: "Muestras un mensaje distinto en cada caso con console.log", cumple: (c) => (c.match(/console\.log\s*\(/g) || []).length >= 2 },
+        ],
+        pistaGeneral: 'if (edad >= 18) { console.log("Eres mayor de edad"); } else { console.log("Eres menor de edad"); } muestra un mensaje distinto según la condición.',
+        pistaCodigo: `if (edad >= 18) {
+  console.log("[mensaje 1]");
+} else {
+  console.log("[mensaje 2]");
+}`,
+        solucion: `<script>
+  let edad = 16;
+
+  if (edad >= 18) {
+    console.log("Eres mayor de edad");
+  } else {
+    console.log("Eres menor de edad");
+  }
+</script>`,
+      },
+
+      4: {
+        id: 4,
+        nombre: "Bucles",
+        objetivo: "Usar un bucle for para repetir una acción varias veces.",
+        conceptoClave: '<code>for (let i = 0; i &lt; N; i++) { ... }</code> repite el código dentro de las llaves mientras la condición sea verdadera, cambiando el valor de i en cada vuelta.',
+        masInformacion: "i++ es una forma corta de escribir i = i + 1; — incrementa la variable en cada vuelta del bucle.",
+        duracionVideo: "3:00",
+        plantilla: `<script>
+  // Escribe un bucle for que muestre los números del 1 al 5 con console.log
+</script>`,
+        criterios: [
+          { descripcion: "Existe un bucle for", cumple: (c) => /\bfor\s*\(/.test(c) },
+          { descripcion: "El for tiene una condición con comparación", cumple: (c) => /for\s*\([^)]*[<>][^)]*\)/.test(c) },
+          { descripcion: "El for incrementa o decrementa una variable", cumple: (c) => /(\+\+|--|\+=|-=)/.test(c) },
+          { descripcion: "Dentro del bucle hay un console.log", cumple: (c) => /console\.log\s*\(/.test(c) },
+        ],
+        pistaGeneral: "for (let i = 1; i <= 5; i++) { console.log(i); } repite console.log(i) 5 veces, cambiando i de 1 a 5.",
+        pistaCodigo: `for (let i = 1; i <= [tu límite]; i++) {
+  console.log(i);
+}`,
+        solucion: `<script>
+  for (let i = 1; i <= 5; i++) {
+    console.log(i);
+  }
+</script>`,
+      },
+
+      5: {
+        id: 5,
+        nombre: "Funciones Simples",
+        objetivo: "Crear una función con parámetros que use return, y llamarla mostrando el resultado.",
+        conceptoClave: '<code>function nombre(parametros) { return valor; }</code> crea una función reutilizable. Los parámetros son los datos que recibe, y <code>return</code> define el resultado que entrega.',
+        masInformacion: "Una función no hace nada por sí sola hasta que la llamas escribiendo su nombre seguido de paréntesis, por ejemplo sumar(2, 3).",
+        duracionVideo: "3:00",
+        plantilla: `<script>
+  // Crea una función con al menos un parámetro que use return
+
+  // Llama a la función y muestra el resultado con console.log
+</script>`,
+        criterios: [
+          { descripcion: "Existe una función declarada con function", cumple: (c) => /\bfunction\s+\w+\s*\([^)]*\)/.test(c) },
+          { descripcion: "La función tiene al menos un parámetro", cumple: (c) => /\bfunction\s+\w+\s*\(\s*\w+/.test(c) },
+          { descripcion: "La función usa return", cumple: (c) => /\breturn\b/.test(c) },
+          { descripcion: "Llamas a la función y muestras el resultado con console.log", cumple: (c) => /console\.log\s*\([^)]*\([^)]*\)/.test(c) },
+        ],
+        pistaGeneral: "function sumar(a, b) { return a + b; } crea una función con dos parámetros. console.log(sumar(2, 3)); la llama y muestra el resultado.",
+        pistaCodigo: `function [nombreFuncion]([parametro1], [parametro2]) {
+  return [parametro1] + [parametro2];
+}
+
+console.log([nombreFuncion]([valor1], [valor2]));`,
+        solucion: `<script>
+  function sumar(a, b) {
+    return a + b;
+  }
+
+  console.log(sumar(2, 3));
+</script>`,
+      },
+    },
+  },
+}
