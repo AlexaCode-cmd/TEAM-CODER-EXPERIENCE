@@ -912,39 +912,6 @@ button {
   }
 }
 
-.boton-ayuda-flotante {
-  position: fixed;
-  top: 24px;
-  right: 40px;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--tarjeta);
-  border: 1px solid var(--borde);
-  color: var(--texto-secundario);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 15px;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: transform 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-  z-index: 300;
-}
-
-.boton-ayuda-flotante:hover {
-  color: var(--morado-texto);
-  border-color: var(--morado);
-  transform: scale(1.06);
-}
-
-@media (max-width: 1200px) {
-  .boton-ayuda-flotante {
-    top: 16px;
-    right: 16px;
-  }
-}
 /* ===== BURBUJA DE CONTACTO: WHATSAPP + REDES SOCIALES ===== */
 .contacto-flotante {
   position: fixed;
@@ -967,6 +934,7 @@ button {
   pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
+
 .contacto-flotante--abierto .contacto-flotante__opciones {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -986,13 +954,26 @@ button {
   box-shadow: 0 8px 20px rgba(43, 34, 51, 0.18);
   transition: transform 0.15s ease;
 }
+
 .contacto-flotante__opcion:hover {
   transform: scale(1.08);
 }
-.contacto-flotante__opcion--whatsapp { background: #25d366; }
-.contacto-flotante__opcion--instagram { background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af); }
-.contacto-flotante__opcion--facebook { background: #1877f2; }
-.contacto-flotante__opcion--tiktok { background: #111111; }
+
+.contacto-flotante__opcion--whatsapp {
+  background: #25d366;
+}
+
+.contacto-flotante__opcion--instagram {
+  background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+}
+
+.contacto-flotante__opcion--facebook {
+  background: #1877f2;
+}
+
+.contacto-flotante__opcion--tiktok {
+  background: #111111;
+}
 
 .contacto-flotante__boton {
   width: 56px;
@@ -1010,6 +991,7 @@ button {
   transition: transform 0.15s ease, background 0.15s ease;
   position: relative;
 }
+
 .contacto-flotante__boton:hover {
   background: var(--morado-oscuro);
   transform: scale(1.05);
@@ -1023,10 +1005,22 @@ button {
   opacity: 0.45;
   animation: contactoPing 2.2s ease-out infinite;
 }
+
 @keyframes contactoPing {
-  0% { transform: scale(1); opacity: 0.4; }
-  100% { transform: scale(1.6); opacity: 0; }
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .contacto-flotante__ping { animation: none; display: none; }
+  .contacto-flotante__ping {
+    animation: none;
+    display: none;
+  }
 }
