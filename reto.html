@@ -161,6 +161,49 @@
     </section>
 
   </main>
+    <div class="modal-certificado" id="modalCertificadoNivel5">
+    <div class="modal-certificado__tarjeta">
+      <button class="modal-certificado__cerrar" id="botonCerrarModalCertificadoNivel5" aria-label="Cerrar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-certificado__insignia"><i class="fa-solid fa-certificate"></i></div>
+      <h2>¡Fase 1 completada!</h2>
+      <p>Terminaste los Niveles 1 al 5: Fundamentos de HTML, CSS y JavaScript. Tu certificado de la Fase 1 ya está disponible.</p>
+      <div class="modal-certificado__acciones">
+        <button class="boton-estado" id="botonDescargarCertificadoModalNivel5"><i class="fa-solid fa-download"></i> Descargar certificado</button>
+        <button class="boton-secundario" id="botonContinuarModalNivel5">Continuar jugando <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-certificado" id="modalCertificadoFinal">
+    <div class="modal-certificado__tarjeta">
+      <button class="modal-certificado__cerrar" id="botonCerrarModalCertificadoFinal" aria-label="Cerrar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-certificado__insignia"><i class="fa-solid fa-certificate"></i></div>
+      <h2>¡Felicidades, completaste todo el programa!</h2>
+      <p>Terminaste los 10 niveles de TEAM CODER EXPERIENCE. Tu certificado de finalización ya está disponible.</p>
+      <div class="modal-certificado__acciones">
+        <button class="boton-estado" id="botonDescargarCertificadoModalFinal"><i class="fa-solid fa-download"></i> Descargar certificado</button>
+        <button class="boton-secundario" id="botonContinuarModalFinal">Continuar <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-certificado" id="modalNivelSuperado">
+    <div class="modal-certificado__tarjeta">
+      <button class="modal-certificado__cerrar" id="botonCerrarModalNivelSuperado" aria-label="Cerrar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-certificado__insignia"><i id="iconoNivelSuperado" class="fa-solid fa-trophy"></i></div>
+      <h2 id="tituloNivelSuperado">¡Nivel superado!</h2>
+      <p id="textoNivelSuperado"></p>
+      <div class="modal-certificado__acciones">
+        <button class="boton-secundario" id="botonContinuarNivelSuperado">Continuar jugando <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </div>
 
   <div class="modal-certificado" id="modalCodigoAcceso">
     <div class="modal-certificado__tarjeta">
@@ -194,6 +237,9 @@
   <script src="js/retos-datos.js"></script>
   <script src="js/progreso.js"></script>
   <script src="js/medallas-datos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="js/logo-movilis-fase1-datos.js"></script>
+  <script src="js/certificados.js"></script>
   <script src="js/reto.js"></script>
 </body>
 </html>
