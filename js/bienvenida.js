@@ -14,10 +14,15 @@ function iniciarBienvenida() {
     setDoc,
   } = firebaseFns;
 
-  // Si ya hay una sesión activa, entra directo al mapa.
-  onAuthStateChanged(firebaseAuth, (usuario) => {
+  // Si ya hay una sesión activa, entra directo al mapa — pero solo se
+  // consulta una vez al cargar la página, y se desactiva enseguida.
+  // Si no, este mismo listener volvería a dispararse (y redirigir de más)
+  // apenas el login/registro cambien el estado de sesión más abajo.
+  const dejarDeEscucharSesion = onAuthStateChanged(firebaseAuth, (usuario) => {
+    dejarDeEscucharSesion();
     if (usuario) window.location.href = "index.html";
   });
+
 
   const botonModoLogin = document.getElementById("botonModoLogin");
   const botonModoRegistro = document.getElementById("botonModoRegistro");
